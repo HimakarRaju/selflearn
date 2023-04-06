@@ -1,3 +1,5 @@
+@import "https://unpkg.com/open-props";
+
 .container {
   padding: 0 2rem;
 }
@@ -29,7 +31,7 @@
 }
 
 .title a {
-  color: #0070f3;
+  color: #fdfeff;
   text-decoration: none;
 }
 
@@ -61,8 +63,8 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Courier New", monospace;
 }
 
 .grid {
@@ -73,23 +75,48 @@
   max-width: 800px;
 }
 
-.card {
+/* .card {
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
-  color: inherit;
+  color: white;
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+} */
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  height: 150px;
+  text-align: left;
+  border-radius: var(--radius-2);
+  padding: var(--size-fluid-3);
+  box-shadow: var(--shadow-3);
+  text-decoration: none;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-3);
+  text-shadow: black;
+}
+
+@media (--motionOK) {
+  .card {
+    animation: var(--animation-fade-in);
+  }
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: greenyellow;
+  border-color: greenyellow;
+  text-shadow: var(--shadow-2);
 }
 
 .card h2 {
